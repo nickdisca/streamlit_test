@@ -73,6 +73,11 @@ st_gtag(
     config={"send_page_view": True}
 )
 
+st_gtag(
+    event="custom_event",
+    parameters={"event_category": "engagement", "event_label": "button_click"}
+)
+
 
 
 DATE_COLUMN = 'date/time'
