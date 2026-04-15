@@ -16,6 +16,19 @@ html_code = """
 """
 st.iframe(html_code, height=200)
 
+GA_code = """
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PBXS9SB8FP"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+  gtag('config', 'G-PBXS9SB8FP');
+</script>
+"""
+st.iframe(GA_code, height=200)
+
 
 
 DATE_COLUMN = 'date/time'
