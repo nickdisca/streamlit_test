@@ -3,5 +3,3 @@ pandas
 numpy
 pathlib
 beautifulsoup4
-logging
-shutil
