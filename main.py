@@ -78,6 +78,16 @@ st_gtag(
     parameters={"event_category": "engagement", "event_label": "button_click"}
 )
 
+st_gtag(
+    key="gtag_send_event_a",
+    id="G-PBXS9SB8FP",
+    event_name="app_main_page",
+    params={
+        "event_category": "test_category_a",
+        "event_label": "test_label_a",
+        "value": 97,
+    },
+)
 
 
 DATE_COLUMN = 'date/time'
