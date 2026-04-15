@@ -1,9 +1,21 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 
 st.title('Uber pickups in NYC')
 st.subheader(f"This is copied from streamlit by {st.secrets['my_username']} :sunglasses:")
+
+#Adding a streamlit component (st.components.v1 is replaced by st.iframe)
+html_code = """
+<div style="padding:20px; background-color:#f0f2f6; border-radius:10px;">
+    <h2 style="color:#4CAF50;">Hello Streamlit 👋</h2>
+    <p>This is a custom HTML component inside Streamlit.</p>
+    <button onclick="alert('Button clicked!')">Click Me</button>
+</div>
+"""
+st.iframe(html_code, height=200)
+
 
 
 DATE_COLUMN = 'date/time'
