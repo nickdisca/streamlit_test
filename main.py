@@ -30,41 +30,48 @@ st.subheader(f"This is copied from streamlit by {st.secrets['my_username']} :sun
 # st.iframe(GA_code, height=200)
 
 # Inject GA as suggested in https://discuss.streamlit.io/t/how-to-add-google-analytics-or-js-code-in-a-streamlit-app/1610/38
-import pathlib
-from bs4 import BeautifulSoup
-import logging
-import shutil
+# import pathlib
+# from bs4 import BeautifulSoup
+# import logging
+# import shutil
 
-def inject_ga():
-    GA_ID = "google_analytics"
-    GA_JS = """
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBXS9SB8FP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+# def inject_ga():
+#     GA_ID = "google_analytics"
+#     GA_JS = """
+#     <!-- Google tag (gtag.js) -->
+#     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBXS9SB8FP"></script>
+#     <script>
+#         window.dataLayer = window.dataLayer || [];
+#         function gtag(){dataLayer.push(arguments);}
+#         gtag('js', new Date());
 
-      gtag('config', 'G-PBXS9SB8FP');
-    </script>
-    """
+#       gtag('config', 'G-PBXS9SB8FP');
+#     </script>
+#     """
 
-    # Insert the script in the head tag of the static template inside your virtual
-    index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
-    logging.info(f'editing {index_path}')
-    soup = BeautifulSoup(index_path.read_text(), features="html.parser")
-    if not soup.find(id=GA_ID):  # if cannot find tag
-        bck_index = index_path.with_suffix('.bck')
-        if bck_index.exists():
-            shutil.copy(bck_index, index_path)  # recover from backup
-        else:
-            shutil.copy(index_path, bck_index)  # keep a backup
-        html = str(soup)
-        new_html = html.replace('<head>', '<head>\n' + GA_JS)
-        index_path.write_text(new_html)
+#     # Insert the script in the head tag of the static template inside your virtual
+#     index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
+#     logging.info(f'editing {index_path}')
+#     soup = BeautifulSoup(index_path.read_text(), features="html.parser")
+#     if not soup.find(id=GA_ID):  # if cannot find tag
+#         bck_index = index_path.with_suffix('.bck')
+#         if bck_index.exists():
+#             shutil.copy(bck_index, index_path)  # recover from backup
+#         else:
+#             shutil.copy(index_path, bck_index)  # keep a backup
+#         html = str(soup)
+#         new_html = html.replace('<head>', '<head>\n' + GA_JS)
+#         index_path.write_text(new_html)
 
-# Call the actual function
-inject_ga()
+# # Call the actual function
+# inject_ga()
+
+# Use streamlit-gtag
+from streamlit_gtag import st_gtag
+st_gtag(
+    gtag_id="G-PBXS9SB8FP",
+    config={"send_page_view": True}
+)
 
 
 
