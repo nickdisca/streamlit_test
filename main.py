@@ -89,6 +89,8 @@ st_gtag(
     },
 )
 
+# Adding a fake button to be clicked to keep the app awake
+st.button("keep me up")
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
