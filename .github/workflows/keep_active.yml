@@ -13,5 +13,5 @@ jobs:
       - name: Ping App
         run: curl -s https://apptest-mcsmr8krzbi7muc339zkjs.streamlit.app > /dev/null
 
-     - name: Ping Page
+      - name: Ping Page
       	run: curl -s https://nickdisca.github.io/streamlit_test > /dev/null
