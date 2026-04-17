@@ -2,7 +2,7 @@ name: Keep Streamlit App Alive with Button
 
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    - cron: "0 */8 * * *"
   workflow_dispatch:
 
 jobs:
