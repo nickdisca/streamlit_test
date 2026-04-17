@@ -17,6 +17,7 @@ st.title('This is a subpage (page 1)')
 #     parameters={"event_category": "engagement", "event_label": "button_click"}
 # )
 
+from streamlit_gtag import st_gtag
 st_gtag(
     key="gtag_send_event_b",
     id="G-PBXS9SB8FP",
