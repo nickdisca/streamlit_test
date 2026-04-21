@@ -1,4 +1,4 @@
-name: Keep Streamlit App Alive with Button
+name: Wake Streamlit App Up with Button
 
 on:
   schedule:
