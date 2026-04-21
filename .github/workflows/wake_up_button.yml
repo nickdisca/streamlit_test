@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  keep_up:
+  wake_up:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
