@@ -67,27 +67,27 @@ st.subheader(f"This is copied from streamlit by {st.secrets['my_username']} :sun
 # inject_ga()
 
 # Use streamlit-gtag
-from streamlit_gtag import st_gtag
-st_gtag(
-    gtag_id="G-PBXS9SB8FP",
-    config={"send_page_view": True}
-)
+# from streamlit_gtag import st_gtag
+# st_gtag(
+#     gtag_id="G-PBXS9SB8FP",
+#     config={"send_page_view": True}
+# )
 
-st_gtag(
-    event="custom_event",
-    parameters={"event_category": "engagement", "event_label": "button_click"}
-)
+# st_gtag(
+#     event="custom_event",
+#     parameters={"event_category": "engagement", "event_label": "button_click"}
+# )
 
-st_gtag(
-    key="gtag_send_event_a",
-    id="G-PBXS9SB8FP",
-    event_name="app_main_page",
-    params={
-        "event_category": "test_category_a",
-        "event_label": "test_label_a",
-        "value": 97,
-    },
-)
+# st_gtag(
+#     key="gtag_send_event_a",
+#     id="G-PBXS9SB8FP",
+#     event_name="app_main_page",
+#     params={
+#         "event_category": "test_category_a",
+#         "event_label": "test_label_a",
+#         "value": 97,
+#     },
+# )
 
 # Adding a fake button to be clicked to keep the app awake
 if st.button("keep me up"):
