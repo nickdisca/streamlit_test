@@ -29,7 +29,7 @@ def main():
         print(f"Opened {STREAMLIT_URL}")
 
         # setup a waiting time, should be long enough to allow for app to be ready
-        wait = WebDriverWait(driver, 30)
+        wait = WebDriverWait(driver, 60)
 
         try:
             # Look for the 'keep me up' button
