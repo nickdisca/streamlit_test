@@ -6,3 +6,4 @@ beautifulsoup4
 streamlit-google-analytics-tag
 selenium
 webdriver-manager
+streamlit @ https://raw.githubusercontent.com/nickdisca/streamlit_test/main/dist/mypackage-1.0.0-py3-none-any.whl
