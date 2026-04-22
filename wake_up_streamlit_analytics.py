@@ -29,7 +29,7 @@ def main():
         print(f"Opened {STREAMLIT_URL}")
 
         # setup a waiting time, should be long enough to allow for app to be ready
-        wait = WebDriverWait(driver, 60)
+        wait = WebDriverWait(driver, 30)
 
         try:
             # Look for the 'keep me up' button
@@ -44,6 +44,9 @@ def main():
             try:
                 wait.until(EC.invisibility_of_element_located((By.XPATH, "//button[contains(., 'Yes, get this app back up')]")))
                 print("Button clicked and disappeared")
+
+                import time
+                time.sleep(60)
 
             except TimeoutException:
                 print("Button clicked but not disappeared, possible failure")
