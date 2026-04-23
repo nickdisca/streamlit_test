@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import TimeoutException
 import os
+import time
 
 # adapted from https://dev.to/virgoalpha/keeping-your-streamlit-app-awake-using-selenium-and-github-actions-4ajd
 
@@ -45,7 +46,7 @@ def main():
                 wait.until(EC.invisibility_of_element_located((By.XPATH, "//button[contains(., 'Yes, get this app back up')]")))
                 print("Button clicked and disappeared")
 
-                import time
+                # seems that we need to wait for some time
                 time.sleep(1)
 
             except TimeoutException:
