@@ -45,6 +45,9 @@ def main():
                 wait.until(EC.invisibility_of_element_located((By.XPATH, "//button[contains(., 'Yes, get this app back up')]")))
                 print("Button clicked and disappeared")
 
+                import time
+                time.sleep(1)
+
             except TimeoutException:
                 print("Button clicked but not disappeared, possible failure")
 
