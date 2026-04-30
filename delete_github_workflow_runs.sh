@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WORKFLOW_FILE="$1"
-echo "Working on workflow file: $WORKFLOW_FILE"
+echo "Working on workflow file: $WORKFLOW_FILE" # can use 'gh workflow list' in terminal to inspect names to use
 
 # Get all run IDs
 run_ids=$(gh run list --limit 500 --workflow "$WORKFLOW_FILE" --json databaseId -q '.[].databaseId')
